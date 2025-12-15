@@ -13,6 +13,14 @@ Route::get('/dashboard', [AdminController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
+Route::get('/customers', [AdminController::class, 'customers'])
+    ->middleware(['auth', 'verified'])
+    ->name('customers');
+
+Route::get('/settings', [AdminController::class, 'settings'])
+    ->middleware(['auth', 'verified'])
+    ->name('settings');
+
 Route::get('/booking/success', function () {
     return view('booking_success');
 })->name('booking.success');
